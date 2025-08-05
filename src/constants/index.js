@@ -1,3 +1,4 @@
+import { href } from "react-router-dom";
 import {
   benefitIcon1,
   benefitIcon2,
@@ -39,6 +40,7 @@ import {
   miro,
   trello,
   whatsapp,
+  whatsapp_gray,
 } from "../assets";
 
 export const navigation = [
@@ -52,22 +54,20 @@ export const navigation = [
     title: "Цены", // Pricing
     url: "#pricing",
   },
-
+  {
+    id: "4",
+    title: "услуги", // Types of work
+    url: "#types-of-work",
+  },
   {
     id: "2",
-    title: "Наша команда",
+    title: "Местоположение", // Team/Location
     url: "#team",
   },
   {
-    id: "4",
-    title: "Создать аккаунт", // New account
-    url: "#signup",
-    onlyMobile: true,
-  },
-  {
-    id: "5",
-    title: "Войти", // Sign in
-    url: "#login",
+    id: "3",
+    title: "instagram", // New account
+    url: "https://www.instagram.com/artnovus_kz?igsh=aHJxdW54MXRhdmMw&utm_source=qr",
     onlyMobile: true,
   },
 ];
@@ -90,42 +90,6 @@ export const brainwaveServicesIcons = [
   disc02,
   chromecast,
   sliders04,
-];
-
-export const roadmap = [
-  {
-    id: "0",
-    title: "Voice recognition",
-    text: "Enable the chatbot to understand and respond to voice commands, making it easier for users to interact with the app hands-free.",
-    date: "May 2023",
-    status: "done",
-    imageUrl: roadmap1,
-    colorful: true,
-  },
-  {
-    id: "1",
-    title: "Gamification",
-    text: "Add game-like elements, such as badges or leaderboards, to incentivize users to engage with the chatbot more frequently.",
-    date: "May 2023",
-    status: "progress",
-    imageUrl: roadmap2,
-  },
-  {
-    id: "2",
-    title: "Chatbot customization",
-    text: "Allow users to customize the chatbot's appearance and behavior, making it more engaging and fun to interact with.",
-    date: "May 2023",
-    status: "done",
-    imageUrl: roadmap3,
-  },
-  {
-    id: "3",
-    title: "Integration with APIs",
-    text: "Allow the chatbot to access external data sources, such as weather APIs or news APIs, to provide more relevant recommendations.",
-    date: "May 2023",
-    status: "progress",
-    imageUrl: roadmap4,
-  },
 ];
 
 export const collabText =
@@ -211,7 +175,7 @@ export const pricing = [
     id: "0",
     title: "Базовый",
     description: "Онлайн-консультация и предварительный расчёт",
-    price: "от 500 000 до 1 500 000 ₸",
+    pricePerM2: 125000,
     features: [
       "Бесплатная консультация по ремонту",
       "Индивидуальные рекомендации по материалам и дизайну",
@@ -222,7 +186,7 @@ export const pricing = [
     id: "1",
     title: "Премиум",
     description: "Полное сопровождение, 3D-дизайн, приоритетная поддержка",
-    price: "от 1 500 000 до 3 000 000 ₸",
+    pricePerM2: 165000,
     features: [
       "Персональный менеджер проекта",
       "3D-дизайн и визуализация интерьера",
@@ -233,7 +197,7 @@ export const pricing = [
     id: "2",
     title: "Бизнес",
     description: "Индивидуальные решения, комплексный ремонт под ключ",
-    price: "от 3 000 000 ₸ и выше",
+    pricePerM2: 200000,
     features: [
       "Персонализированный подход под ваш проект",
       "Полный цикл работ от идеи до сдачи объекта",
@@ -245,8 +209,8 @@ export const pricing = [
 export const benefits = [
   {
     id: "0",
-    title: "Ответ на любой вопрос",
-    text: "ArtNovus даёт понятные и точные ответы для каждого клиента — быстро и без лишних усилий.",
+    title: "Вы сэкономите на материалах до 20%",
+    text: "У нас наработанная база поставщиков, которые предоставляют нам скидки 15-20% на все товары. Поэтому покупать с нами выгодно.",
     backgroundUrl: "./src/assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
@@ -254,52 +218,59 @@ export const benefits = [
   },
   {
     id: "1",
-    title: "Любой проект — вместе с вами",
-    text: "Независимо от идеи или масштаба — мы реализуем любой проект, который вы задумали.",
+    title: "Соблюдаем сроки",
+    text: "Сроки выполнения всех работ мы заранее прописываем в смете и согласовываем с заказчиком. За каждый день просрочки заплатим 1% от общей суммы.",
     backgroundUrl: "./src/assets/benefits/card-2.svg",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
   },
   {
     id: "2",
-    title: "Энергия, как никогда раньше",
-    text: "ArtNovus открывает новый взгляд на электричество — инновации, удобство и мощность в каждой детали.",
+    title: "Гарантируем качество",
+    text: "Даем гарантию на услуги и закупленные нами материалы на 1 год. Если что-то испортится или появятся недочеты – все исправим за свой счёт.",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
     light: true,
+  },
+  {
+    id: "3",
+    title: "Опытная команда",
+    text: "Все наши мастера занимаются ремонтными работами не менее 5 лет. В команде есть профессиональные сантехники, электрики и отделочники.",
+    backgroundUrl: "./src/assets/benefits/card-1.svg",
+    iconUrl: benefitIcon1,
+    imageUrl: benefitImage2,
+  },
+  {
+    id: "4",
+    title: "Официальное оформление",
+    text: "Заключаем официальный договор с прописанными обязательствами и гарантиями. Это защищает ваши права и нашу репутацию.",
+    backgroundUrl: "./src/assets/benefits/card-2.svg",
+    iconUrl: benefitIcon2,
+    imageUrl: benefitImage2,
+    light: true,
+  },
+  {
+    id: "5",
+    title: "Высокое качество работ",
+    text: "Соблюдаем все строительные нормы РК и применяем современные технологии для качественного и надёжного ремонта.",
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: benefitIcon3,
+    imageUrl: benefitImage2,
   },
 ];
 
 export const socials = [
   {
     id: "0",
-    title: "Discord",
-    iconUrl: discordBlack,
-    url: "#",
+    title: "Instagram",
+    iconUrl: instagram,
+    url: "https://www.instagram.com/artnovus_kz?igsh=aHJxdW54MXRhdmMw&utm_source=qr",
   },
   {
     id: "1",
-    title: "Twitter",
-    iconUrl: twitter,
-    url: "#",
-  },
-  {
-    id: "2",
-    title: "Instagram",
-    iconUrl: instagram,
-    url: "#",
-  },
-  {
-    id: "3",
-    title: "Telegram",
-    iconUrl: telegram,
-    url: "#",
-  },
-  {
-    id: "4",
-    title: "Facebook",
-    iconUrl: facebook,
-    url: "#",
+    title: "WhatsApp",
+    iconUrl: whatsapp_gray, // If this is still a Telegram icon, update it to a WhatsApp icon if available
+    url: "https://wa.me/77000606290",
   },
 ];

@@ -6,6 +6,7 @@ import Button from "./button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
+
 const Header = () => {
   const { hash } = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -39,7 +40,7 @@ const Header = () => {
         className="flex items-center px-5 lg:px-7.5
       xl:px-10 max-lg:py-4"
       >
-        <a className="block w-[12rem] xl-mr-8" href="hero">
+        <a className="block w-[12rem] xl-mr-8" href="#hero">
           <img src={header_logo} width={230} height={40} alt="Header_logo" />
         </a>
 
@@ -80,15 +81,13 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
-        <a
-          href="#signup"
-          className="button hidden mr-8 text-gray-500
-            transition-colors hover:text-white lg:block"
+        <Button
+          className="hidden lg:flex"
+          href="https://www.instagram.com/artnovus_kz?igsh=aHJxdW54MXRhdmMw&utm_source=qr"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Создать аккаунт
-        </a>
-        <Button className="hidden lg:flex" href="#login">
-          Войти
+          instagram
         </Button>
 
         <Button
